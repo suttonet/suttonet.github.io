@@ -52,7 +52,7 @@
     		function checkCookie() {
     		  let user = getCookie("username");
     		  if (user != "") {
-    		    alert("Welcome again " + user);
+    		    alert("Welcome back! Your last visit was " + getCookie("lastVisitDate"));
     		  } else {
     		    user = prompt("Please enter your name:", "");
     		    if (user != "" && user != null) {
