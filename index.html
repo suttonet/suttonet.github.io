@@ -51,8 +51,10 @@
 
     		function checkCookie() {
     		  let user = getCookie("username");
-    		  let lastVisitDate = getCookie("lastVisitDate");
+    		  
+
     		  if (user != "") {
+    		  	let lastVisitDate = getCookie("lastVisitDate");
     		    alert("Welcome back! Your last visit was " + lastVisitDate);
     		  } else {
     		  	alert('Welcome to my portfolio website!')
