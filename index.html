@@ -51,8 +51,9 @@
 
     		function checkCookie() {
     		  let user = getCookie("username");
+    		  let lastVisitDate = getCookie("lastVisitDate");
     		  if (user != "") {
-    		    alert("Welcome back! Your last visit was " + getCookie("lastVisitDate"));
+    		    alert("Welcome back! Your last visit was " + lastVisitDate);
     		  } else {
     		    user = prompt("Please enter your name:", "");
     		    if (user != "" && user != null) {
