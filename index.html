@@ -27,15 +27,15 @@
     </head>
     <body id="page-top">
     	<script>
-    		function setCookie(cname, cvalue, exdays) {
+    		function setCookie(name, value, days) {
     		  const d = new Date();
-    		  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    		  d.setTime(d.getTime() + (days*24*60*60*1000));
     		  let expires = "expires="+ d.toUTCString();
-    		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    		  document.cookie = name + "=" + value + ";" + expires + ";path=/";
     		}
 
-    		function getCookie(cname) {
-    		  let name = cname + "=";
+    		function getCookie(name) {
+    		  let name = name + "=";
     		  let decodedCookie = decodeURIComponent(document.cookie);
     		  let ca = decodedCookie.split(';');
     		  for(let i = 0; i <ca.length; i++) {
@@ -66,7 +66,7 @@
     		}
 
     		window.onload = displayCookieAlert;
-    	
+
 
     	</script>
         <!-- Navigation-->
