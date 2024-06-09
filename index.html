@@ -55,6 +55,7 @@
     		  if (user != "") {
     		    alert("Welcome back! Your last visit was " + lastVisitDate);
     		  } else {
+    		  	alert('Welcome to my portfolio website!')
     		    user = prompt("Please enter your name:", "");
     		    if (user != "" && user != null) {
     		      setCookie("username", user, 365);
@@ -313,7 +314,7 @@
         </div>
 
         
-    	<img id="catImage" src="" alt="Cat Image">
+    	<img id="catImage" src="" alt="Cat Image" width="100px" height="100px">
         <script>
 			fetch('https://cataas.com/cat')
 			  .then(response => {
