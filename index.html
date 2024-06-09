@@ -54,7 +54,7 @@
     			username = getCookie("username");
     			currentDate = new Date().toLocaleSring();
 
-    			if(!username) {
+    			if(document.cookie.indexOf("username") < 0){
     				alert('Welcome to my portfolio website!');
     				setCookie("username", "YOURusername", 365);
     				setCookie("lastVisitDate", currentDate, 365);
@@ -64,8 +64,6 @@
     				setCookies("lastVisitDate", currentDate, 365);
     			}
     		}
-
-    		window.onload = displayCookieAlert;
 
 
     	</script>
