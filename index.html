@@ -65,6 +65,18 @@
     			}
     		}
 
+    		function checkCookie() {
+    		  let username = getCookie("username");
+    		  if (username != "") {
+    		   alert("Welcome again " + username);
+    		  } else {
+    		    username = prompt("Please enter your name:", "");
+    		    if (username != "" && username != null) {
+    		      setCookie("username", username, 365);
+    		    }
+    		  }
+    		}
+
     	</script>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
