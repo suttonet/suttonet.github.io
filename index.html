@@ -62,14 +62,17 @@
                     <div id="response"></div>
 
                     <script>
-	                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
-						function(result) {
-						
-							if (result.length == 0) return;
+                    	function jokeAPI() {
+ 		                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+							function(result) {
+							
+								if (result.length == 0) return;
 
-							console.log("From jokeAPI: " + JSON.stringify(result));
-							$("#response").html("A programming joke of the day: " + result.joke) }); 
-	                    setInterval(displayTime, 1000);
+								console.log("From jokeAPI: " + JSON.stringify(result));
+								$("#response").html("A joke of the day: " + result.joke)
+								});
+ 		                }
+ 		                setInterval(jokeAPI, 1000);
 					</script>
 					<br>
 					<br>
