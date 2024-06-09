@@ -87,6 +87,14 @@
 								}
 							</script>
 						</div>
+				        <div class="clock-digit">
+				        	<script type="text/javascript">
+							function displayTime() {
+								document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+							}
+							setInterval(displayTime, 500);
+							</script>
+						</div>
                     </div>
                 </div>
             </section>
@@ -251,14 +259,7 @@
                 </div>
             </section>
         </div>
-        <div class="clock-digit">
-        	<script type="text/javascript">
-			function displayTime() {
-				document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
-			}
-			setInterval(displayTime, 500);
-			</script>
-		</div>
+
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
