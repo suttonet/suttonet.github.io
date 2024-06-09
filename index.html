@@ -273,29 +273,28 @@
         </div>
 
         
-    <div class="catDisplay">
     	<img id="catImage" src="" alt="Cat Image">
         <script>
-        // Retrieve the cat image from https://cataas.com/ using $.get()
-        $.get("https://cataas.com/cat", function(response) {
-            // Convert the response to a Blob object
-            var blob = new Blob([response], { type: "image/jpeg" });
-            
-            // Create a FileReader object to read the Blob as data URL
-            var reader = new FileReader();
-            reader.onload = function(event) {
-                // Set the src attribute of the img tag to display the cat image
-                $("#catImage").attr("src", event.target.result);
-            };
-            
-            // Read the Blob as data URL
-            reader.readAsDataURL(blob);
-        })
-        .fail(function(jqXHR, textStatus, errorThrown) {
-            console.error("Error fetching cat image:", textStatus, errorThrown);
-        });
+		  fetch('https://cataas.com/cat')
+		  .then(response => {
+		    // Check if the response is successful
+		    if (!response.ok) {
+		      throw new Error('Network response was not ok');
+		    }
+		    // Convert the response to a blob
+		    return response.blob();
+		  })
+		  .then(blob => {
+		    // Create a URL for the blob
+		    const catImageUrl = URL.createObjectURL(blob);
+		    // Set the cat image source
+		    document.getElementById('catImage').src = catImageUrl;
+		  })
+		  .catch(error => {
+		    console.error('There was a problem with the fetch operation:', error);
+		  });
     </script>
-	</div>
+
         <div class="time">
         	<div id="digit-clock"></div>
 			
