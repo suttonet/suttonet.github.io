@@ -276,14 +276,16 @@
 
         <script>
 
-	 		    $.get("https://cataas.com/cat",
-				function(result) {
-							
-					if (result.length == 0) return;
-
-				console.log(JSON.stringify(result));
-				$("#response").html('<img src="' + result.url + '">')
-				});
+	 		$.get("https://cataas.com/cat", function(response) {
+            	// Extract the URL of the cat image from the response
+            	var catImageUrl = response.url;
+            
+            	// Set the src attribute of the img tag to display the cat image
+            	$("#catImage").attr("src", catImageUrl);
+        	})
+        	.fail(function(error) {
+            	console.error("Error fetching cat image:", error);
+        	});
  
 		</script>
         <div class="time">
