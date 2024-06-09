@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
     	<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-LJSP8CR9NG"></script>
@@ -10,7 +10,7 @@
 
 		  gtag('config', 'G-LJSP8CR9NG');
 		</script>
-
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
@@ -58,6 +58,17 @@
                         <div id="email" onclick="showhideEmail()">Show my email</div>
 						<script type="text/javascript" src="email.js"></script>
                     </div>
+
+                    <script>
+	                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single",
+						function(result) {
+						
+							if (result.length == 0) return;
+
+							console.log("From jokeAPI: " + JSON.stringify(result));
+							$("#response").html("A programming joke of the day: " + result.joke) }); 
+					</script>
+
                     <p class="lead mb-5">I am a second year cybersecurity engineering student at the University of Cincinnati. I have a passion for working with people and a lot of experience in the customer service industry. I am also a member of the Bearcat Bands as a tuba player. Some of my hobbies include vintage computers, gaming, and being out in nature.</p>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/ethan-sutton-79102a253/"><i class="fab fa-linkedin-in"></i></a>
