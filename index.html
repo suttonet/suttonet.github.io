@@ -271,19 +271,20 @@
                 </div>
             </section>
         </div>
+
+        <div id="responsecat"></div>
+
         <script>
-            function catAPI() {
+
 	 		    $.get("https://cataas.com/cat",
 				function(result) {
 							
 					if (result.length == 0) return;
 
 				console.log(JSON.stringify(result));
-				$("#response").html(result.cats)
-			});
- 		    }
- 		    catAPI();
- 		    setInterval(catAPI, 1000);
+				$("#responsecat").html('<img src="' + result.url + '">')
+				});
+ 
 		</script>
         <div class="time">
         	<div id="digit-clock"></div>
