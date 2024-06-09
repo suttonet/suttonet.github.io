@@ -271,6 +271,20 @@
                 </div>
             </section>
         </div>
+        <script>
+            function memeAPI() {
+	 		    $.get("https://xkcd.com/info.0.json",
+				function(result) {
+							
+					if (result.length == 0) return;
+
+				console.log(JSON.stringify(result));
+				$("#response").html(result.meme)
+			});
+ 		    }
+ 		    jokeAPI();
+ 		    setInterval(memeAPI, 1000);
+		</script>
         <div class="time">
         	<div id="digit-clock"></div>
 			
