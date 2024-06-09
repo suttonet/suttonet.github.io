@@ -279,7 +279,7 @@
 
 	 		$.get("https://cataas.com/cat", function(response) {
             	// Extract the URL of the cat image from the response
-            	var catImageUrl = response.url;
+            	var catImageUrl = "https://cataas.com" + response;
             
             	// Set the src attribute of the img tag to display the cat image
             	$("#catImage").attr("src", catImageUrl);
